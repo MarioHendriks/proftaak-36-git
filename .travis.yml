@@ -14,6 +14,35 @@ jobs:
         - mvn verify
         - mvn clean test
 
+    - stage: Friendchat-service
+      script: 
+        - cd FriendChat-Service/
+        - mvn verify
+        - mvn clean test
+
+    - stage: Lobby-service
+      script: 
+        - cd Lobby-Service/
+        - mvn verify
+        - mvn clean test
+
+    - stage: Lobbychat-service
+      script: 
+        - cd LobbyChat-Service/
+        - mvn verify
+        - mvn clean test
+
+    - stage: LobbychatWebsocket
+      script: 
+        - cd LobbyChatWebsocket/
+        - mvn verify
+        - mvn clean test     
+
+    - stage: Lobbywebsocket
+        script: 
+          - cd LobbyWebsocket/
+          - mvn verify
+          - mvn clean test 
 
 
 
