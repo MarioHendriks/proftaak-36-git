@@ -6,6 +6,7 @@ import com.PTS3S36G3.FriendService.Models.Enums.Status;
 import com.PTS3S36G3.FriendService.Models.Friends;
 import com.PTS3S36G3.FriendService.Models.Relationship;
 import com.PTS3S36G3.FriendService.Models.User;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -36,19 +37,11 @@ public class FriendResource
     }
 
 
-<<<<<<< HEAD
-
     @HystrixCommand(fallbackMethod = "GetFallbackAllFriends")
     @GetMapping(value = "/get/{userId}")
     public Friends GetFriends(@PathVariable("userId") int userId)
     {
         friends = new Friends();
-
-=======
-    @RequestMapping(value = "/get/{userId}", method = RequestMethod.GET)
-    public Friends getAllFriends(@PathVariable("userId") int userId) {
-        Friends friends = new Friends();
->>>>>>> 82ca9ba1d7c7f892c3c110d1073d1e106fe2cd02
         // Get all relationships with the requesting user involved.
         List<Relationship> userRelationships = relationshipLogic.getRelationshipsByUserId(userId);
         // friend list.
