@@ -6,7 +6,6 @@ import com.PTS3S36G3.FriendService.Models.Enums.Status;
 import com.PTS3S36G3.FriendService.Models.Friends;
 import com.PTS3S36G3.FriendService.Models.Relationship;
 import com.PTS3S36G3.FriendService.Models.User;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
