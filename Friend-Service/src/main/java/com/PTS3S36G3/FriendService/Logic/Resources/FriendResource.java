@@ -37,7 +37,7 @@ public class FriendResource
     }
 
 
-    @HystrixCommand(fallbackMethod = "GetFallbackAllFriends")
+   // @HystrixCommand(fallbackMethod = "GetFallbackAllFriends")
     @GetMapping(value = "/get/{userId}")
     public Friends GetFriends(@PathVariable("userId") int userId)
     {
