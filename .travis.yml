@@ -3,7 +3,9 @@ language: java
 jobs:
   include:
     - stage: User
-      script: builduser.sh
+      before_install:
+        - script: cd User-Service/
+      script: mvn verify
       script: mvn clean test
       after_success:
         - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
@@ -13,4 +15,3 @@ jobs:
         - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
         - chmod +x send.sh
         - ./send.sh failure https://discordapp.com/api/webhooks/664069203757629460/DZTfqwtS_aqRiqAwE46em_LplfjZpsvEGqv-Wuy4Oc_WfZ4b2-kPUWCEvp4GxQynxK7R
-   
