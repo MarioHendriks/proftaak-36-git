@@ -20,6 +20,11 @@ jobs:
         - mvn verify
         - mvn clean test
 
+    - stage: Lobby-service
+      script: 
+        - cd Lobby-Service/
+        - mvn verify
+        - mvn clean test
 
 
 
