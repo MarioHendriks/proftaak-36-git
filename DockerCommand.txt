@@ -1,0 +1,4 @@
+docker run -p 8084:8081 -it -t springio/gs-spring-boot-docker
+
+8084 = poort die via internet benaderbaar is, moet uniek zijn
+8081 = de poort waarmee de bovenstaande moet verbinden. Moet dus gelijk zijn aan project poort in application.properties

@@ -1,0 +1,2 @@
+Om een nieuwe lobby aan te maken kan de volgende valide JSON gebruikt worden:
+{"Action": "CREATELOBBY", "LobbyToJoin": "2", "User": {"id": "4", "username": "fse"} }

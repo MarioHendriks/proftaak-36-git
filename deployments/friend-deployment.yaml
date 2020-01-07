@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: friend-microservice
+spec:
+  selector:
+    matchLabels: 
+      app: friend-microservice
+      tier: backend
+      track: stable
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: friend-microservice
+        tier: backend
+        track: stable
+    spec:
+      containers:
+        - name: friend-microservice
+          image: coecomber/microservicesg3:friend17
+          ports:
+            - name: http
+              containerPort: 8082
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: friend-service
+spec:
+  selector:
+    app: friend-microservice
+  ports:
+    - protocol: TCP
+      # Port accessible inside cluster
+      port: 8099
+      #Port to forward to inside the pod
+      targetPort: 8082
+      #Port accessible outside cluster
+      nodePort: 30104
+  type: LoadBalancer

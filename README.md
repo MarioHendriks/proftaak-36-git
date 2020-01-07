@@ -1,1 +1,3 @@
-# proftaak-36-git
+# MicroservicesG3
+
+Repository for microservices groep 3 PLUSklas btw
